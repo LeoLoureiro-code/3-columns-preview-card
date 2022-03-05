@@ -12,83 +12,98 @@ body{
 }
 
 main{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0 auto;
-    width: 325px;
+    width: 328px;
+
+    @media screen and (min-width: 1200px) {
+        flex-direction: row;
+        margin-top: 10.7rem;
+        width: 930px;
+    }
 }
 
 section{
-    padding: 50px;
-}
+    height: 441px;
+    padding: 49px 49px;
 
-.section-sedan{
-    background-color: $bgSedan;
-    font-family: $fontShoulders;
-    margin-top: 5.4rem;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    @media screen and (min-width: 1200px) {
+        height: 500px;
+        width: 33%;
+    }
 
     h2{
         color: $bgHeadingsButton;
+        font-family: $fontShoulders;
         font-size: 40px;
-        margin-top: 1.9rem;
+        margin-top: 2rem;
         text-transform: uppercase;
     }
 
     p{
         color: $text;
-        font-family: $fontDeca;
         font-size: $fontSize;
+        font-family: $fontDeca;
         font-weight: 400;
-        margin-top: 1.7rem;
         line-height: 25px;
+        margin-top: 1.5rem;
+        padding: 0 0px;
     }
-    
+
     button{
-        color: $bgSedan;
-        border: none;
+        border: 1px solid $text;
         border-radius: 25px;
         font-family: $fontDeca;
-        font-size: $fontSize;
+        font-size: 15px;
         font-weight: 400;
-        margin-top: 1.4rem;
-        padding: 15px 31px;
+        margin-top: 1.5rem;
+        padding: 14px 30px;
+
+        @media screen and (min-width: 1200px) {
+            margin-top: 5.1rem;
+        }
     }
 }
 
-.section-suv{
-    @extend .section-sedan;
-    background-color: $bgSuv;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    margin-top: 0;
+.section-sedan{
+    background-color: $bgSedan;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    margin-top: 5.5rem;
 
-    p{
-        margin-top: 1.5rem;
+    @media screen and (min-width: 1200px) {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 7px;
+        margin-top: 0;
     }
     
+
     button{
-        color: $bgSuv
+        color: $bgSedan;
+    }
+   
+}
+
+.section-suv{
+    background-color: $bgSuv;
+
+    button{
+        color: $bgSuv;
     }
 }
 
 .section-luxury{
-    @extend .section-suv;
     background-color: $bgLux;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding-bottom: 46px;
 
-    h2{
-        margin-top: 1.8rem;
-    }
-
-    p{
-        margin-top: 1.5rem;
+    @media screen and (min-width: 1200px) {
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
     }
 
     button{
-        margin-top: 1.6rem;
-        font-family: $fontDeca;
         color: $bgLux;
     }
 }
